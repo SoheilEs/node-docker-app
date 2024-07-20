@@ -36,7 +36,7 @@ function main() {
   const port = process.env.PORT || 3000;
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
-  // app.set('trust proxy', 1);
+  app.set('trust proxy', 1);
 
   connectWithRetry();
   redisClient.on("error", function (err) {
